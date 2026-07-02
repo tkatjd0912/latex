@@ -1,0 +1,35 @@
+\documentclass{article}
+\usepackage{kotex}
+
+\begin{document}
+\title{essential\_sample.\tex}
+\author{SeungHeon LEE}
+\date{\today}
+\maketitle
+
+\tableofcontents
+
+\section{본문 \emph{Running Text}}
+\LaTeX \ 은 입력파일에서 공백주거나 단어를 띄워두는 것이 출력물에 영향을 주지 않는다. 입력파일에서 공백이 몇 개이든지간에, \LaTeX \ 은 이를 하나의 공백으로 처리한다. 
+또한, \LaTeX \ 은 각 행의 끝을 단어 간의 공백으로 간주하여 자동으로 띄어쓰기를 한다. 
+입력파일에서 공백인 행이 존재할 경우 이는 새로운 단락의 시작임을 가리키므로, 새로운 단락을 시작하는 것이 아니라면 공백인 행을 두지 말자. 
+
+\LaTeX \ 은 잘 쓰이지 않는 기호 
+\begin{quote}
+\#, \$, \%, \&, \_, \{, \}, \textasciitilde, \textasciicircum
+\end{quote}
+를 입력파일에 그냥 입력하면 제대로 처리하지 못한다.
+
+\subsection{\LaTeX \ 명령어}
+\begin{itemize}
+    \item \LaTeX \ 에서 사용되는 명령어는 항상 `\backslash' \ 로 시작한다.  
+    \item \LaTeX \ 명령어는 대소문자를 구분한다는 점을 유의하여야 한다.
+    \item 다음과 같은 형태의 명령어도 있다. 
+        \begin{quote}
+            \backslash command\{text\}  
+        \end{quote}
+        이때, \{\} 안에 들어가는 text는 명령어의 인자(parameter 또는 argument)이며, 필수적으로 들어가야 한다. 
+        반면, [] 안에 들어가는 text는 없어도 되는 선택 인자이다. 
+\end{itemize}
+ 
+
