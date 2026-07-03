@@ -1,4 +1,4 @@
-\documentclass{article}
+\documentclass[a4paper, titlepage]{article}
 \usepackage{kotex}
 
 \begin{document}
@@ -32,4 +32,82 @@
     이때, \{ \} 안에 들어가는 text는 명령어의 인자(parameter 또는 argument)이며, 필수적으로 들어가야 한다. 
     반면, [ ] 안에 들어가는 text는 없어도 되는 선택 인자이다. 
 \end{itemize}
+
+\subsection{기타 살펴볼 사항}
+\begin{itemize}
+    \item \LaTeX \ 은 열고 닫는 홑따옴표와 겹따옴표를 입력할 수 있다. 여는 따옴표는 `를 활용하고, 닫는 따옴표는 '를 활용한다. 겹따옴표는 앞의 따옴표를 두 번 입력하면 된다. 
+    \item \LaTeX \ 에는 총 세 가지의 대시가 존재한다. 하이픈(-), 짧은 대시(--)\footnote{숫자의 범위 표시에 주로 사용. ex. \ 10--20}, 긴 대시(---)\footnote{문장의 구분에 사용.}가 그것이다.  
+    \item 본문에 특수문자를 입력해야 할 때가 있다. 이때는 백슬래시(\textbackslash) \ 를 활용하여 입력할 수 있다. 
+\end{itemize}
+
+\section{도큐먼트 클래스 \emph{documentclass}}
+본 절에서는 \LaTeX \ 에 존재하는 몇 가지 표준 도큐먼트 클래스에 대해 소개한다. 
+\begin{itemize}
+    \item [\textbf{article}] 짧은 문서나 출판물 속에 들어갈 기사와 같은 것에 어울린다. article은 chapter가 없고 \textbackslash maketitle로 제목을 작성하면, 표지를 별도로 사용하지 않고 첫 페이지의 상단에 제목을 인쇄한다.
+    \item [\textbf{report}] 좀더 기술적인 문서 작성에 알맞다. 이는 chapter를 가지며 제목을 별도의 페이지에 인쇄하는 점을 제외하면 article과 같다.
+    \item [\textbf{book}] 책자의 출판을 목적으로 한다. 종이의 양면에 인쇄할 것으로 가정하여 페이지의 구성을 조정한다.
+    \item [\textbf{letter}] 편지 등을 작성하기 위한 것이다. 편지 형식을 사용하면 주소, 날짜, 서명 등의 각 구성요소가 적절하게 배치된 편지를 작성할 수 있다.
+\end{itemize}
+
+또한, 이러한 표준 형식을 바꿀 수 있는 여러 옵션이 존재한다. 문서에서 도큐먼트 클래스는 하나만 사용할 수 있지만, 옵션은 여러 개 사용할 수 있다는 점이 그 특징이다. \LaTeX \ 에 존재하는 표준 옵션들을 일부 알아보자.\footnote{다른 옵션에 관한 정보를 알고 싶다면 \LaTeX :Document Structure 페이지를 참고하라.}  
+\begin{itemize}
+    \item [\textbf{11pt, 12pt}] 본문에 사용되는 폰트 크기는 일반적으로 10pt이지만, 해당 옵션을 활용하여 폰트의 크기를 키울 수 있다.
+    \item [\textbf{twoside}] article이나 report 형식에서 양면 인쇄를 하기 위한 옵션이며, book에서는 twoside가 기본 설정에 포함된다. 
+    \item [\textbf{titlepage}] article 형식에서 \textbackslash maketitle 명령어가 새로운 페이지에 제목을 작성하도록 한다. 이는 report나 book 형식에서는 기본 설정에 포함된다. 
+    \item [\textbf{a4paper}] 모든 표준 형식의 출력을 a4 용지 크기에 맞추도록 한다.  
+\end{itemize}
+
+\section{환경}
+\subsection{인용문 \emph{quote, quotation}}
+\begin{itemize}
+    \item [\textbf{quote}] quote는 짧은 인용문이 쓰일 때 활용한다. 
+US presidents have been
+known for their pithy remarks:
+\begin{quote}
+The buck stops here.
+I am not a crook.
+\end{quote}
+
+    \item [\textbf{quotation}] quotation은 한 단락을 넘어가는 긴 인용문이 쓰일 때 활용한다. quotation은 단락별로 들여쓰기가 가능하다.
+Here is some advice to remember:
+\begin{quotation}
+Environments for making quotations
+can be used for other things as well.
+Many problems can be solved by
+novel applications of existing
+environments.
+\end{quotation}
+
+    \item [\textbf{verse}] verse는 시를 작성할 때 활용한다. 각 행은 \textbackslash \textbackslash 로 구분하며, 연은 한 줄을 띄어쓴다.
+\begin{verse}
+I will arise and go now,
+and go to Innisfree,\\
+And a small cabin build there,
+of clay and wattles made:\\
+Nine bean-rows will I have there,
+a hive for the honey-bee;\\
+And live alone in the bee-loud glade.
+
+And I shall have some peace there,
+for peace comes dropping slow, \\
+Dropping from the veils of the morning
+to where the cricket sings; \\
+There midnight's all a glimmer,
+and noon a purple glow, \\
+And evening full of the linnet's wings.
+\end{verse}
+\end{itemize}
+
+\subsection{중앙 및 좌우정렬 \emph{center, flushleft, flushright}}
+\begin{center}
+    center는 중앙정렬, \\
+\end{center} 
+\begin{flushleft}
+    flushleft는 좌측정렬, \\
+\end{flushleft}
+\begin{flushright}
+    flushright는 우측정렬을 의미한다.
+\end{flushright}
+
+\subsection{나열 문단 \emph{itemize, enumerate, description}}
 \end{document}
