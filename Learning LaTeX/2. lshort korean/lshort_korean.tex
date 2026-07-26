@@ -43,5 +43,42 @@ is the core of a very different transistor model. \ldots
 \\ 예를 들면, \fbox{이런 식}이다.  
 \newline \\
 
+\subsection{미리 정의된 문자열}
+미리 정의된 문자열 또한 존재한다. 특별한 문자열을 식자하는 데 쓰이는 간단한 \LaTeX{} 명령을 알아보자. 
+\begin{itemize}
+    \item [\textbackslash{}today] 현재 사용 언어에서의 현재 날짜 표기
+    \item [\textbackslash{}TeX] 최고의 조판 시스템의 이름. \TeX
+    \item [\textbackslash{}LaTeX] 지금 우리가 배우고 있는 것의 이름. \LaTeX
+    \item [\textbackslash{}LaTeXe] \LaTeX{}의 최신판. \LaTeXe
+\end{itemize}
+
+\subsection{특수 문자와 기호}
+\LaTeX{}에서는 네 종류의 대시를 사용할 수 있다. 세 종류의 대시는 연속 입력하는 대시의 개수가 각기 다르며, 네 번째 것은 수학에서 사용하는 빼기 부호이다. 
+이 대시들은 각각 `-' 하이픈, `--' 엔대시, `---' 엠대시 그리고 `$-$' 빼기 부호라고 한다. 
+
+웹 주소에서 흔히 볼 수 있는 문자가 틸데(\(\sim\){})이다. \LaTeX{}에서는 이 문자를 표시하기 위해 \textbackslash{}textasciitilde를 쓸 수 있지만, 그 결과는 원하는 바와 다를 것이다. 
+따라서, \textbackslash(\textbackslash{}sim\textbackslash)을 통해 틸데를 식자하도록 하자.  
+\newline \\
+
+\subsection{합자}
+어떤 문자들의 조합은 한 글자씩을 따로따로 이어서 식자하지 않고 특별한 기호를 이용하여 식자한다. 이것을 합자(ligature)라고 한다. 
+이 합자 기능을 이용하지 `않으려면' \textbackslash{}mbox\{\}를 합쳐지는 두 글자 사이에 끼워 넣으면 된다. 
+예를 들면 아래와 같다. 
+\begin{quotation}
+Not shelfful \\
+but shelf\mbox{}ful
+\end{quotation}
+
+\subsection{강세 부호와 특수 문자}
+\LaTeX{}에서는 여러 언어에서 사용되는 강세 부호와 특수 문자를 쓸 수 있다. 
+알파벳 i와 j 위에 강세 부호를 붙이기 위해서는 문자 위의 점을 없애야 하는데, 이는 \textbackslash{}i, \textbackslash{}j라고 입력하면 해결된다. 
+강세 부호를 입력한 예는 아래와 같다. 
+\begin{quotation}
+H\^otel, na\"\i ve, \'el\`eve, \\
+sm\o rrebr\o d, !`Se\~norita!, \\
+Sch\"onbrunner Schlo\ss{}
+Stra\ss e 
+\end{quotation}
+
 \ldots{} and here it ends. 
-\end{document}
+\end{document} 
