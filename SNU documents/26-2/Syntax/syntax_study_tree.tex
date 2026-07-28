@@ -1,0 +1,297 @@
+\documentclass{article}
+\usepackage[linguistics]{forest}       % Syntax Tree 패키지 
+\usepackage{kotex}
+\usepackage[a4paper, 
+            top = 2.5cm, 
+            bottom = 2.5cm, 
+            left = 2cm, 
+            right = 2cm]{geometry}     % 용지 여백 조절 패키지 
+\usepackage{adjustbox}                 % 트리 폭 자동 조절 패키지 
+\usepackage{fancyhdr}                  % 머리글, 바닥글 조정 패키지
+\pagestyle{fancy}
+\fancyhf{} % 기존 머리글과 바닥글 초기화
+\fancyfoot[L]{\nouppercase{\leftmark}} % 왼쪽: 현재 section 제목
+\fancyfoot[R]{\thepage}                % 오른쪽: 페이지 번호
+\renewcommand{\sectionmark}[1]{%
+  \markboth{#1}{}%
+}
+\renewcommand{\headrulewidth}{0pt}     % 머리글 선 제거
+\renewcommand{\footrulewidth}{0.4pt}   % 바닥글 위쪽 선
+\usepackage[2-4]{pagesel}            % 컴파일 할 페이지 지정 패키지 
+
+\setcounter{secnumdepth}{0}            % section 넘버링 제거
+
+\begin{document}
+\title{26-2 통사론 스터디 트리 구조 연습}
+\author{언어학과 이승헌}
+\date{\today}
+\maketitle
+\tableofcontents
+
+\newpage
+\section{chpt 3. Constituency, Trees, and Rules}
+\bigskip
+
+\noindent
+\begin{minipage}[t]{0.48\textwidth}
+\vspace{0pt}
+\textbf{GPS 1-(a)}\par
+\centering
+\begin{forest}
+[AdjP
+  [AdvP [Adv [very]]]
+  [Adj [smelly]]
+]
+\end{forest}
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.48\textwidth}
+\vspace{0pt}
+\textbf{GPS 1-(b)}\par
+\centering
+\begin{forest}
+[AdvP
+  [AdvP [Adv [too]]]
+  [Adv [quickly]]
+]
+\end{forest}
+\end{minipage}
+
+\bigskip
+\noindent
+\begin{minipage}[t]{0.48\textwidth}
+\vspace{0pt}
+\textbf{GPS 1-(c)}\par
+\centering
+\begin{forest}
+[AdvP
+  [AdvP 
+    [AdvP [Adv [much]]]
+    [Adv [too]]
+    ]
+  [Adv [quickly]]
+]
+\end{forest}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\textwidth}
+\vspace{0pt}
+\textbf{GPS 1-(d)}\par
+\centering
+\begin{forest}
+[AdvP
+  [AdvP
+    [AdvP 
+      [AdvP [Adv [very]]]
+      [Adv [much]]
+    ]
+    [Adv [too]]]     
+  [Adv [quickly]]
+]
+\end{forest}
+\end{minipage}
+
+\bigskip
+\noindent
+\begin{minipage}[t]{0.48\textwidth}
+\vspace{0pt}
+\textbf{GPS 1-(e)}\par
+\centering
+\begin{forest}
+[NP
+  [Det [the]]
+  [AdjP 
+    [Adj [old]]]
+  [N [shoelace]] 
+]
+\end{forest}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\textwidth}
+\vspace{0pt}
+\textbf{GPS 1-(f)}\par
+\centering
+\begin{forest}
+[NP
+  [Det [the]]
+  [AdjP [Adj [soogy]]]
+  [AdjP [Adj [limp]]]
+  [AdjP [Adj [spaghetti]]]
+  [N [noodle]]
+]
+\end{forest}
+\end{minipage}
+
+\bigskip
+\noindent
+\begin{minipage}[t]{0.48\textwidth}
+\vspace{0pt}
+\textbf{GPS 1-(g)}\par
+\centering
+\begin{forest}
+[NP 
+  [Det [these]]
+  [AdjP 
+    [AdvP [Adv [very]]]
+    [Adj [finicky]]
+    ]
+  [N [children]]
+]
+\end{forest}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\textwidth}
+\vspace{0pt}
+\textbf{GPS 1-(h)}\par
+\centering
+\begin{forest}
+[NP
+  [Det [any]]
+  [AdjP [Adj [ugly]]]
+  [AdjP [Adj [smelly]]]
+  [N [sock]]
+]
+\end{forest}
+\end{minipage}
+
+\newpage
+\noindent
+\begin{minipage}[t]{0.48\textwidth}
+\vspace{0pt}
+\textbf{GPS 2-(a)}\par
+\centering
+\begin{forest}
+[NP 
+  [Det [the]]
+  [N [desk]]
+  [PP 
+    [P [with]]
+    [NP 
+      [Det [the]]
+      [AdjP [Adj [wobbly]]]
+      [N [drawner]]  
+    ]
+  ]
+]
+\end{forest}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\textwidth}
+\vspace{0pt}
+\textbf{GPS 2-(b)}\par
+\centering
+\begin{forest}
+[PP
+  [P [in]]
+  [NP 
+    [Det [my]]
+    [AdjP [Adj [black]]]
+    [AdjP [Adj [rubber]]]
+    [N [boots]]
+  ]
+]
+\end{forest}
+\end{minipage}
+
+\bigskip
+\noindent
+\begin{minipage}[t]{\textwidth}
+\vspace{0pt}
+\textbf{GPS 2-(c)}\par
+\medskip
+\centering
+\begin{forest}
+[NP 
+  [Det [that]]
+  [N [notebook]]
+  [PP 
+    [P [with]]
+    [NP
+      [Det [the]]
+      [N [scribbles]]
+      [PP 
+        [P [in]]
+        [NP
+          [Det [the]]
+          [N [margin]]
+        ]
+      ]
+    ]
+  ]
+]
+\end{forest}
+\end{minipage}
+
+\bigskip
+\noindent
+\begin{minipage}[t]{\textwidth}
+\vspace{0pt}
+\textbf{GPS 2-(d)}\par
+\medskip
+\centering
+\begin{adjustbox}{max width = \linewidth}
+\begin{forest}
+[NP 
+  [Det [the]]
+  [N [pen]]
+  [PP
+    [P [at]]
+    [NP 
+      [Det [the]]
+      [N [back]]
+      [PP
+        [P [of]]
+        [NP
+          [Det [the]]
+          [N [drawer]]
+          [PP
+            [P [in]]
+            [NP
+              [Det [the]]
+              [N [desk]]
+              [PP
+                [P [near]]
+                [NP
+                  [Det [the]]
+                  [AdjP [Adj [bright]]]
+                  [AdjP [Adj [yellow]]]
+                  [N [painting]]
+                ]
+              ]
+            ]
+          ]
+        ]
+      ]
+    ]
+  ]
+]
+\end{forest}
+\end{adjustbox}
+\end{minipage}
+
+
+\newpage
+\section{chpt 4. Structural Relations}
+
+\section{chpt 5. Binding Theory}
+
+\section{chpt 6. X-bar Theory}
+
+\section{chpt 7. Expanding X-bar Theory}
+
+\section{chpt 8. Constraining X-bar: Theta Theory}
+
+\section{chpt 9. Theta Grids and Functional Categories}
+
+\section{chpt 10. Head-to-Head Movements}
+
+\section{chpt 11. DP Movement}
+
+\section{chpt 12. \textit{Wh}-Movemnet and Locality Constraints}
+
+\section{chpt 13. A Unified Theory of Movement}
+
+\section{chpt 14. Ditransitives}
+
+\section{chpt 15. Raising, Control, and Empty Categories}
+\end{document}
