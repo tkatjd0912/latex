@@ -17,9 +17,15 @@
 }
 \renewcommand{\headrulewidth}{0pt}     % 머리글 선 제거
 \renewcommand{\footrulewidth}{0.4pt}   % 바닥글 위쪽 선
-\usepackage[2-4]{pagesel}            % 컴파일 할 페이지 지정 패키지 
 
 \setcounter{secnumdepth}{0}            % section 넘버링 제거
+\forestset{
+  terminal/.style={
+    no edge,
+    l=3ex,
+    for parent={l sep=0pt}             % 트리 스타일 수정 (자식 노드 선 제거 및 간격 조정)
+  }
+}
 
 \begin{document}
 \title{26-2 통사론 스터디 트리 구조 연습}
@@ -39,8 +45,8 @@
 \centering
 \begin{forest}
 [AdjP
-  [AdvP [Adv [very]]]
-  [Adj [smelly]]
+  [AdvP [Adv [very, terminal]]]
+  [Adj [smelly, terminal]]
 ]
 \end{forest}
 \end{minipage}%
@@ -51,8 +57,8 @@
 \centering
 \begin{forest}
 [AdvP
-  [AdvP [Adv [too]]]
-  [Adv [quickly]]
+  [AdvP [Adv [too, terminal]]]
+  [Adv [quickly, terminal]]
 ]
 \end{forest}
 \end{minipage}
@@ -66,10 +72,10 @@
 \begin{forest}
 [AdvP
   [AdvP 
-    [AdvP [Adv [much]]]
-    [Adv [too]]
+    [AdvP [Adv [much, terminal]]]
+    [Adv [too, terminal]]
     ]
-  [Adv [quickly]]
+  [Adv [quickly, terminal]]
 ]
 \end{forest}
 \end{minipage}
@@ -82,11 +88,11 @@
 [AdvP
   [AdvP
     [AdvP 
-      [AdvP [Adv [very]]]
-      [Adv [much]]
+      [AdvP [Adv [very, terminal]]]
+      [Adv [much, terminal]]
     ]
-    [Adv [too]]]     
-  [Adv [quickly]]
+    [Adv [too, terminal]]]     
+  [Adv [quickly, terminal]]
 ]
 \end{forest}
 \end{minipage}
@@ -99,10 +105,10 @@
 \centering
 \begin{forest}
 [NP
-  [Det [the]]
+  [Det [the, terminal]]
   [AdjP 
-    [Adj [old]]]
-  [N [shoelace]] 
+    [Adj [old, terminal]]]
+  [N [shoelace, terminal]] 
 ]
 \end{forest}
 \end{minipage}
@@ -113,11 +119,11 @@
 \centering
 \begin{forest}
 [NP
-  [Det [the]]
-  [AdjP [Adj [soogy]]]
-  [AdjP [Adj [limp]]]
-  [AdjP [Adj [spaghetti]]]
-  [N [noodle]]
+  [Det [the, terminal]]
+  [AdjP [Adj [soogy, terminal]]]
+  [AdjP [Adj [limp, terminal]]]
+  [AdjP [Adj [spaghetti, terminal]]]
+  [N [noodle, terminal]]
 ]
 \end{forest}
 \end{minipage}
@@ -130,12 +136,12 @@
 \centering
 \begin{forest}
 [NP 
-  [Det [these]]
+  [Det [these, terminal]]
   [AdjP 
-    [AdvP [Adv [very]]]
-    [Adj [finicky]]
+    [AdvP [Adv [very, terminal]]]
+    [Adj [finicky, terminal]]
     ]
-  [N [children]]
+  [N [children, terminal]]
 ]
 \end{forest}
 \end{minipage}
@@ -146,10 +152,10 @@
 \centering
 \begin{forest}
 [NP
-  [Det [any]]
-  [AdjP [Adj [ugly]]]
-  [AdjP [Adj [smelly]]]
-  [N [sock]]
+  [Det [any, terminal]]
+  [AdjP [Adj [ugly, terminal]]]
+  [AdjP [Adj [smelly, terminal]]]
+  [N [sock, terminal]]
 ]
 \end{forest}
 \end{minipage}
@@ -162,14 +168,14 @@
 \centering
 \begin{forest}
 [NP 
-  [Det [the]]
-  [N [desk]]
+  [Det [the, terminal]]
+  [N [desk, terminal]]
   [PP 
-    [P [with]]
+    [P [with, terminal]]
     [NP 
-      [Det [the]]
-      [AdjP [Adj [wobbly]]]
-      [N [drawner]]  
+      [Det [the, terminal]]
+      [AdjP [Adj [wobbly, terminal]]]
+      [N [drawner, terminal]]  
     ]
   ]
 ]
@@ -182,12 +188,12 @@
 \centering
 \begin{forest}
 [PP
-  [P [in]]
+  [P [in, terminal]]
   [NP 
-    [Det [my]]
-    [AdjP [Adj [black]]]
-    [AdjP [Adj [rubber]]]
-    [N [boots]]
+    [Det [my, terminal]]
+    [AdjP [Adj [black, terminal]]]
+    [AdjP [Adj [rubber, terminal]]]
+    [N [boots, terminal]]
   ]
 ]
 \end{forest}
@@ -202,18 +208,18 @@
 \centering
 \begin{forest}
 [NP 
-  [Det [that]]
-  [N [notebook]]
+  [Det [that, terminal]]
+  [N [notebook, terminal]]
   [PP 
-    [P [with]]
+    [P [with, terminal]]
     [NP
-      [Det [the]]
-      [N [scribbles]]
+      [Det [the, terminal]]
+      [N [scribbles, terminal]]
       [PP 
-        [P [in]]
+        [P [in, terminal]]
         [NP
-          [Det [the]]
-          [N [margin]]
+          [Det [the, terminal]]
+          [N [margin, terminal]]
         ]
       ]
     ]
@@ -232,30 +238,30 @@
 \begin{adjustbox}{max width = \linewidth}
 \begin{forest}
 [NP 
-  [Det [the]]
-  [N [pen]]
+  [Det [the, terminal]]
+  [N [pen, terminal]]
   [PP
-    [P [at]]
+    [P [at, terminal]]
     [NP 
-      [Det [the]]
-      [N [back]]
+      [Det [the, terminal]]
+      [N [back, terminal]]
       [PP
-        [P [of]]
+        [P [of, terminal]]
         [NP
-          [Det [the]]
-          [N [drawer]]
+          [Det [the, terminal]]
+          [N [drawer, terminal]]
           [PP
-            [P [in]]
+            [P [in, terminal]]
             [NP
-              [Det [the]]
-              [N [desk]]
+              [Det [the, terminal]]
+              [N [desk, terminal]]
               [PP
-                [P [near]]
+                [P [near, terminal]]
                 [NP
-                  [Det [the]]
-                  [AdjP [Adj [bright]]]
-                  [AdjP [Adj [yellow]]]
-                  [N [painting]]
+                  [Det [the, terminal]]
+                  [AdjP [Adj [bright, terminal]]]
+                  [AdjP [Adj [yellow, terminal]]]
+                  [N [painting, terminal]]
                 ]
               ]
             ]
