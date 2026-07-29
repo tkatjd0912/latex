@@ -1,0 +1,143 @@
+\documentclass{article}
+\usepackage{kotex}
+\usepackage{setspace}  % 줄간격
+\setstretch{1.15}
+\usepackage{enumitem}  % 목록 들여쓰기 
+\setlist[itemize]{leftmargin=*, align=left}
+\setlist[description]{
+  font=\normalfont,
+  labelwidth=4cm,
+  leftmargin=4cm,
+  labelsep=0cm,
+  align=left
+}
+\usepackage{titlesec}  % 섹션 스타일 조정
+\titleformat{\section}
+  {\normalfont\Large\bfseries}
+  {}
+  {0pt}
+  {}
+  [\vspace{0.3em}\titlerule]
+
+\titlespacing*{\section}
+  {0pt}
+  {1.5em}
+  {0.8em}
+\newcommand{\descriptionrule}{%
+  \item[]\vspace{-0.6em}
+  \noindent\hspace*{-\leftmargin}%
+  \rule{0.6\linewidth}{0.4pt}
+  \vspace{-0.4em}
+}              
+  \usepackage[a4paper, margin=2.5cm]{geometry}
+\usepackage{fancyhdr}                 
+\pagestyle{fancy}
+\fancyhf{}                             
+\fancyfoot[L]{\nouppercase{세계의 언어 (2026학년도 2학기)}} 
+\fancyfoot[R]{\thepage}                
+\renewcommand{\headrulewidth}{0pt}    
+\renewcommand{\footrulewidth}{0.4pt}   
+
+\begin{document}
+
+\title{세계의 언어 (2026학년도 2학기)}
+\author{\textit{written by using} \LaTeX}
+\date{\today}
+\maketitle
+\thispagestyle{fancy}
+\setcounter{secnumdepth}{0}
+\bigskip
+
+\section{0. 강좌정보}
+\medskip
+교과목번호: 100.132(001)\\
+개설학과: 서울대학교 인문대학 언어학과\\
+담당교수: 최계영\\
+수업시간: 화/목 11:00--12:15\\
+수업장소: 14-602
+
+\section{1. 수업목표}
+\medskip
+다양한 언어를 연구하는 세 가지 관점을 살피고 세계 언어의 다양성을 이해한다.
+\medskip
+\begin{description}
+    \item[\textbf{언어 유형론적 관점}] 언어의 보편성과 개별성을 통하여 세계 언어의 다양한 유형을 이해한다.
+    \item[\textbf{언어 계통론적 관점}] 언어의 변화와 분화를 통하여 세계 언어의 계통을 이해한다.
+    \item[\textbf{기록언어학적 관점}] 절멸위기 언어의 현황을 살피고 언어 기록과 보전에 대한 언어학자와 화자들의 노력을 인식한다.
+\end{description}
+
+\section{2. 교재 및 참고문헌}
+\medskip
+\subsection{교재}
+『세계 언어의 이모저모』(권재일, 2013.)\footnote{수업자료는 교재와 참고문헌의 내용에 기반하여 PDF 파일로 제공}
+\subsection{부교재}
+『아무도 모르는 사이에 죽다 : 사라지는 언어에 대한 가슴 아픈 탐사 보고서』(Nicholas Evans, 2025.) \\
+『잠들면 안 돼, 거기 뱀이 있어 : 일리노이 주립대 학장의 아마존 탐험 30년』(Daniel Leonard Everett, 2010.)
+
+\newpage
+\section{3. 주차별 강의계획\protect\footnotemark}
+\footnotetext{세부 일정이 공개되지 않은 관계로 임의로 기입하였음. 모든 일정은 추후 변동 가능}
+\medskip
+\begin{description}
+    \item[1주차(9/1, 9/3)] 강의 소개 / 세계 언어의 현황
+    \item[2주차(9/8, 9/10)] 언어의 계통적 분류와 어족 (1)
+    \item[3주차(9/15, 9/17)] 언어의 계통적 분류와 어족 (2)
+    \item[4주차(9/22, 9/29)] 언어의 유형론적 분류
+    \item[5주차(10/1, 10/6)] 어휘의 다양성 (1)
+    \item[6주차(10/8, 10/13)] 어휘의 다양성 (2)
+    \item[7주차(10/15, 10/20)] 어휘의 다양성 (3)
+    \item[8주차] 중간고사
+    \item[9주차(10/27, 10/29)] 소리의 다양성 (1)
+    \item[10주차(11/3, 11/5)] 소리의 다양성 (2)
+    \item[11주차(11/10, 11/12)] 문법의 다양성 (1)
+    \item[12주차(11/17, 11/19)] 문법의 다양성 (2)
+    \item[13주차(11/24, 11/26)] 세계의 문자 체계 (1)
+    \item[14주차(12/1, 12/3)] 세계의 문자 체계 (2)
+    \item[15주차] 기말고사
+\end{description}
+
+\section{4. 평가방법}
+\medskip
+\begin{description}
+    \item[\textbf{성적부여방식}] 상대평가(A--F)\footnote{S/U 선택가능}
+    \item[\textbf{출석(10\%)}] 수업일수의 1/3을 초과하여 결석하면 성적은 ``F'' 또는 ``U''가 됨\\(담당교수가 불가피한 결석으로 인정하는 경우는 예외로 할 수 있음)
+    \item[\textbf{과제(15\%)}] 수강 인원에 따라 개인별 또는 조별로 하나의 어족 또는 언어를 담당하여 주제에 따라 담당 언어에 대한 내용을 조사하고 발표함.\footnote{수업 내용에 따라 과제로 부여될 수도 있고 수업 내에서 활동하고 발표할 수도 있음.} 
+    \item[\textbf{중간(30\%)}] 지필고사. 객관식, 단답형, 서술형
+    \item[\textbf{기말(30\%)}] 지필고사. 객관식, 단답형, 서술형
+    \item[\textbf{수시평가(15\%)}] 수업 중 활동 평가 
+    \descriptionrule
+    \item[\textbf{합계}] 100\%
+\end{description}
+
+\newpage
+\section{5. 생성형 AI 도구 활용 방침}
+\medskip
+본 강의에서는 생성형 AI를 학습 보조 도구로 활용할 수 있습니다. 과제 수행에 필요한 아이디어 및 주제 탐색, 자료분석 등의 목적으로 생성형 AI를 사용할 수 있습니다. 다만, 생성형 AI를 과제 수행에 사용한 경우, 사용 도구명, 사용 과정 및 생성 내용 등을 과제에 명시해야 합니다.
+
+\section{6. 정원 외 신청 수용 여부}
+\medskip
+최대 0명
+
+\section{7. 장애학생 지원사항}
+\medskip
+\subsection{강의 수강 관련}
+\medskip
+\begin{itemize}
+    \item 시각장애: 교재 제작(디지털교재, 점자교재, 확대교재 등), 대필도우미 허용
+    \item 지체장애: 교재 제작(디지털교재), 대필도우미 및 수업보조 도우미 허용
+    \item 청각장애: 대필 및 문자통역 도우미 활동 허용, 강의 녹취 허용
+    \item 건강장애: 질병 등으로 인한 결석에 대한 출석 인정, 대필도우미 허용
+    \item 학습장애: 대필도우미 허용
+    \item 지적장애/자폐성장애: 대필도우미 및 수업 멘토 허용
+\end{itemize}
+\subsection{과제 및 평가 관련}
+\medskip
+\begin{itemize}
+    \item 시각장애/지체장애/청각장애/건강장애/학습장애: 과제 제출기한 연장, 과제 제출 및 응답 방식의 조정, 평가 시간 연장, 평가 문항 제시 및 응답 방식의 조정, 별도 고사실 제공
+    \item 지적장애/자폐성장애: 개별화 과제 제출 및 대체 평가 실시
+\end{itemize}
+\subsection{비고}
+\medskip
+본 강의를 수강하는 장애학생들에게는 이상의 지원 서비스 이외에도 장애학생 개개인의 특성과 요구에 따라, 지도교수 및 장애학생지원센터와의 상담을 통하여 적절한 수준의 지원 서비스를 제공합니다. 장애학생에 대한 지원서비스와 관련하여 문의사항이 있는 학생들은 담당교수 최계영(02-880-6163) 혹은 장애학생지원센터(02-880-8787)로 문의바랍니다.
+
+\end{document}
