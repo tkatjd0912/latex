@@ -1,0 +1,142 @@
+\documentclass{article}
+\usepackage{kotex}
+\usepackage{setspace}  % 줄간격
+\setstretch{1.15}
+\usepackage{enumitem}  % 목록 들여쓰기 
+\setlist[itemize]{leftmargin=*, align=left}
+\setlist[description]{
+  font=\normalfont,
+  labelwidth=4cm,
+  leftmargin=4cm,
+  labelsep=0cm,
+  align=left
+}
+\usepackage{titlesec}  % 섹션 스타일 조정
+\titleformat{\section}
+  {\normalfont\Large\bfseries}
+  {}
+  {0pt}
+  {}
+  [\vspace{0.3em}\titlerule]
+
+\titlespacing*{\section}
+  {0pt}
+  {1.5em}
+  {0.8em}
+\newcommand{\descriptionrule}{%
+  \item[]\vspace{-0.6em}
+  \noindent\hspace*{-\leftmargin}%
+  \rule{0.6\linewidth}{0.4pt}
+  \vspace{-0.4em}
+}              
+  \usepackage[a4paper, margin=2.5cm]{geometry}
+\usepackage{fancyhdr}                 
+\pagestyle{fancy}
+\fancyhf{}                             
+\fancyfoot[L]{\nouppercase{역사와 철학 한문원전읽기 (2026학년도 2학기)}} 
+\fancyfoot[R]{\thepage}                
+\renewcommand{\headrulewidth}{0pt}    
+\renewcommand{\footrulewidth}{0.4pt}   
+
+\begin{document}
+
+\title{역사와 철학 한문원전읽기 (2026학년도 2학기)}
+\author{\textit{written by using} \LaTeX}
+\date{\today}
+\maketitle
+\thispagestyle{fancy}
+\setcounter{secnumdepth}{0}
+\bigskip
+
+\section{0. 강좌정보}
+\medskip
+교과목번호: F28.301(001)\\
+개설학과: 서울대학교 인문대학 동양사학전공\\
+담당교수: 미공개\\
+수업시간: 월/수 15:30--16:45\\
+수업장소: 14-102
+
+\section{1. 수업목표}
+\medskip
+2026년 우리는 지난 시대의 사람들이 상상도 못했을 사료의 `홍수' 시대에 살고 있습니다. 수십 수백 만 권에 달하는 한문 사료가 디지털 데이터베이스로 공개되었고, AI 번역 기술의 비약적인 발전은 전공자가 아니면 접근할 엄두도 내지 못하던 여러 사료의 문턱을 크게 낮추었습니다. 역설적이게도 다양한 사료를 쉽게 구할 수 있게 될수록, 사료의 `바다'에서 길을 잃지 않기 위해서는 사료의 특성과 한계를 정확하게 파악하고 또 내용을 정확하게 해석하는 능력이 더욱더 필요해지고 있습니다.
+이번 학기 역사와 철학 한문원전읽기 수업의 목표는 한문 원전의 정확한 강독과 더불어, 정사(正史), 금석문, 지리지, 실록, 법전과 판례집 등 국가와 개인이 남긴 다양한 형태의 원전을 경험함으로써 한문 사료가 시대와 형식에 따라 얼마나 다양하게 존재하며 각기 어떤 성격과 한계를 지니는지 비판적으로 판별하는 능력을 기르는 것입니다. 궁극적으로는 수강생 스스로 사료를 통해 역사의 실상에 접근하는 즐거움을 느끼는 것을 목표로 수업을 꾸려나갈 예정입니다.
+
+\section{2. 교재 및 참고문헌\protect\footnotemark}
+\footnotetext{한문 원문과 한국어 번역본이 수업 2주 전 eTL에 업로드될 예정}
+\medskip
+미기재
+
+\newpage
+\section{3. 주차별 강의계획\protect\footnotemark}
+\footnotetext{세부 일정이 공개되지 않은 관계로 임의로 기입하였음. 모든 일정은 추후 변동 가능}
+\medskip
+\begin{description}
+    \item[1주차] 오리엔테이션
+    \item[2주차] 한문 사료의 세계 \& 한문 문법 기초 연습
+    \item[3주차] 한문 사료의 세계 \& 한문 문법 기초 연습
+    \item[4주차] 기전체 정사(正史)의 성립 - 『사기(史記)』와 『한서(漢書)』
+    \item[5주차] 기전체 정사(正史)의 성립 - 『사기(史記)』와 『한서(漢書)』
+    \item[6주차] 돌에 새긴 역사 - 금석문과 묘지명
+    \item[7주차] 돌에 새긴 역사 - 금석문과 묘지명
+    \item[8주차] 중간고사
+    \item[9주차] 사라진 제국의 지리서 - 『대원일통지(大元一統志)』
+    \item[10주차] 사라진 제국의 지리서 - 『대원일통지(大元一統志)』
+    \item[11주차] 엇갈리는 `사실' - 『명태종실록』과 『조선태종실록』
+    \item[12주차] 엇갈리는 `사실' - 『명태종실록』과 『조선태종실록』
+    \item[13주차] 법과 소송 - 『대청율례(大淸律例)』와 『형안회람(刑案彙覽)』
+    \item[14주차] 법과 소송 - 『대청율례(大淸律例)』와 『형안회람(刑案彙覽)』
+    \item[15주차] 기말고사
+\end{description}
+
+\section{4. 평가방법}
+\medskip
+\begin{description}
+    \item[\textbf{성적부여방식}] 상대평가(A--F)\
+    \item[\textbf{출석(30\%)}] 수업일수의 1/3을 초과하여 결석하면 성적은 ``F'' 또는 ``U''가 됨\\(담당교수가 불가피한 결석으로 인정하는 경우는 예외로 할 수 있음)
+    \item[\textbf{과제(0\%)}] 
+    \item[\textbf{중간(20\%)}] 지필고사
+    \item[\textbf{기말(20\%)}] 지필고사
+    \item[\textbf{태도(30\%)}] 강독 참여도 
+    \descriptionrule
+    \item[\textbf{합계}] 100\%
+\end{description}
+
+\newpage
+\section{5. 생성형 AI 도구 활용 방침}
+\medskip
+본 강의에서는 생성형 AI의 활용이 가능합니다. 수강생은 수업의 목적과 학습 성과를 저해하지 않는 범위 내에서, 모든 수업 활동에 생성형 AI를 사용할 수 있습니다.
+
+\section{6. 정원 외 신청 수용 여부}
+\medskip
+최대 0명
+
+\section{7. 수강생 참고사항}
+\begin{itemize}
+    \item 교수자가 확정된 수업입니다.
+    \item 이 수업은 중급 이상 외국어 교과목으로서 한문 원전의 강독을 중심으로 수업이 이루어집니다. 한문 원문과 한국어 번역본을 수업 2주 전 eTL에 업로드될 예정입니다.
+    \item 한 테마 당 4번(2주)의 수업을 기준으로 1번은 사료 성격과 역사에 대한 강의, 나머지 3번은 제시된 사료에 대한 강독으로 진행할 예정이나, 수강생 현황에 따라 변경될 수 있습니다. 
+\end{itemize}
+
+\section{8. 장애학생 지원사항}
+\medskip
+\subsection{강의 수강 관련}
+\medskip
+\begin{itemize}
+    \item 시각장애: 교재 제작(디지털교재, 점자교재, 확대교재 등), 대필도우미 허용
+    \item 지체장애: 교재 제작(디지털교재), 대필도우미 및 수업보조 도우미 허용
+    \item 청각장애: 대필 및 문자통역 도우미 활동 허용, 강의 녹취 허용
+    \item 건강장애: 질병 등으로 인한 결석에 대한 출석 인정, 대필도우미 허용
+    \item 학습장애: 대필도우미 허용
+    \item 지적장애/자폐성장애: 대필도우미 및 수업 멘토 허용
+\end{itemize}
+\subsection{과제 및 평가 관련}
+\medskip
+\begin{itemize}
+    \item 시각장애/지체장애/청각장애/건강장애/학습장애: 과제 제출기한 연장, 과제 제출 및 응답 방식의 조정, 평가 시간 연장, 평가 문항 제시 및 응답 방식의 조정, 별도 고사실 제공
+    \item 지적장애/자폐성장애: 개별화 과제 제출 및 대체 평가 실시
+\end{itemize}
+\subsection{비고}
+\medskip
+본 강의를 수강하는 장애학생들에게는 이상의 지원 서비스 이외에도 장애학생 개개인의 특성과 요구에 따라, 지도교수 및 장애학생지원센터와의 상담을 통하여 적절한 수준의 지원 서비스를 제공합니다. 장애학생에 대한 지원서비스와 관련하여 문의사항이 있는 학생들은 담당교수 혹은 장애학생지원센터(02-880-8787)로 문의바랍니다.
+
+\end{document}
