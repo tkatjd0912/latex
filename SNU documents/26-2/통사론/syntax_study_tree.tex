@@ -6,7 +6,6 @@
             bottom = 2.5cm, 
             left = 2cm, 
             right = 2cm]{geometry}     % 용지 여백 조절 패키지 
-\usepackage{adjustbox}                 % 트리 폭 자동 조절 패키지 
 \usepackage{fancyhdr}                  % 머리글, 바닥글 조정 패키지
 \pagestyle{fancy}
 \fancyhf{} % 기존 머리글과 바닥글 초기화
@@ -23,10 +22,32 @@
   terminal/.style={
     no edge,
     l=3ex,
-    for parent={l sep=0pt}             % 트리 스타일 수정 (자식 노드 선 제거 및 간격 조정)
+    for parent={l sep=0pt}
   }
 }
 
+% Short form for a lexical category and its terminal.
+\forestset{
+  lex/.style={append={[#1, terminal]}},
+  simple terminals/.style={
+    delay={for tree={split option={content}{ }{content,lex}}}
+  }
+}
+
+% Reusable GPS tree block; default width is 0.48\textwidth.
+\NewDocumentEnvironment{gpstree}{O{0.48\textwidth} m +b}
+{%
+  \begin{minipage}[t]{#1}
+  \vspace{0pt}%
+  \textbf{#2}\par
+  \medskip
+  \centering
+  \begin{forest} simple terminals
+    #3
+  \end{forest}
+  \end{minipage}%
+}
+{}
 \begin{document}
 \title{26-2 통사론 스터디 트리 구조 연습}
 \author{언어학과 이승헌}
@@ -40,229 +61,167 @@
 \bigskip
 
 \noindent
-\begin{minipage}[t]{0.48\textwidth}
-\vspace{0pt}
-\textbf{GPS 1-(a)}\par
-\centering
-\begin{forest}
+\begin{gpstree}{GPS 1-(a)}
 [AdjP
-  [AdvP [Adv [very, terminal]]]
-  [Adj [smelly, terminal]]
+  [AdvP [Adv very]]
+  [Adj smelly]
 ]
-\end{forest}
-\end{minipage}%
+\end{gpstree}%
 \hfill
-\begin{minipage}[t]{0.48\textwidth}
-\vspace{0pt}
-\textbf{GPS 1-(b)}\par
-\centering
-\begin{forest}
+\begin{gpstree}{GPS 1-(b)}
 [AdvP
-  [AdvP [Adv [too, terminal]]]
-  [Adv [quickly, terminal]]
+  [AdvP [Adv too]]
+  [Adv quickly]
 ]
-\end{forest}
-\end{minipage}
+\end{gpstree}
 
 \bigskip
 \noindent
-\begin{minipage}[t]{0.48\textwidth}
-\vspace{0pt}
-\textbf{GPS 1-(c)}\par
-\centering
-\begin{forest}
+\begin{gpstree}{GPS 1-(c)}
 [AdvP
   [AdvP 
-    [AdvP [Adv [much, terminal]]]
-    [Adv [too, terminal]]
+    [AdvP [Adv much]]
+    [Adv too]
     ]
-  [Adv [quickly, terminal]]
+  [Adv quickly]
 ]
-\end{forest}
-\end{minipage}
+\end{gpstree}%
 \hfill
-\begin{minipage}[t]{0.48\textwidth}
-\vspace{0pt}
-\textbf{GPS 1-(d)}\par
-\centering
-\begin{forest}
+\begin{gpstree}{GPS 1-(d)}
 [AdvP
   [AdvP
     [AdvP 
-      [AdvP [Adv [very, terminal]]]
-      [Adv [much, terminal]]
+      [AdvP [Adv very]]
+      [Adv much]
     ]
-    [Adv [too, terminal]]]     
-  [Adv [quickly, terminal]]
+    [Adv too]]     
+  [Adv quickly]
 ]
-\end{forest}
-\end{minipage}
+\end{gpstree}
 
 \bigskip
 \noindent
-\begin{minipage}[t]{0.48\textwidth}
-\vspace{0pt}
-\textbf{GPS 1-(e)}\par
-\centering
-\begin{forest}
+\begin{gpstree}{GPS 1-(e)}
 [NP
-  [Det [the, terminal]]
+  [Det the]
   [AdjP 
-    [Adj [old, terminal]]]
-  [N [shoelace, terminal]] 
+    [Adj old]]
+  [N shoelace] 
 ]
-\end{forest}
-\end{minipage}
+\end{gpstree}%
 \hfill
-\begin{minipage}[t]{0.48\textwidth}
-\vspace{0pt}
-\textbf{GPS 1-(f)}\par
-\centering
-\begin{forest}
+\begin{gpstree}{GPS 1-(f)}
 [NP
-  [Det [the, terminal]]
-  [AdjP [Adj [soogy, terminal]]]
-  [AdjP [Adj [limp, terminal]]]
-  [AdjP [Adj [spaghetti, terminal]]]
-  [N [noodle, terminal]]
+  [Det the]
+  [AdjP [Adj soogy]]
+  [AdjP [Adj limp]]
+  [AdjP [Adj spaghetti]]
+  [N noodle]
 ]
-\end{forest}
-\end{minipage}
+\end{gpstree}
 
 \bigskip
 \noindent
-\begin{minipage}[t]{0.48\textwidth}
-\vspace{0pt}
-\textbf{GPS 1-(g)}\par
-\centering
-\begin{forest}
+\begin{gpstree}{GPS 1-(g)}
 [NP 
-  [Det [these, terminal]]
+  [Det these]
   [AdjP 
-    [AdvP [Adv [very, terminal]]]
-    [Adj [finicky, terminal]]
+    [AdvP [Adv very]]
+    [Adj finicky]
     ]
-  [N [children, terminal]]
+  [N children]
 ]
-\end{forest}
-\end{minipage}
+\end{gpstree}%
 \hfill
-\begin{minipage}[t]{0.48\textwidth}
-\vspace{0pt}
-\textbf{GPS 1-(h)}\par
-\centering
-\begin{forest}
+\begin{gpstree}{GPS 1-(h)}
 [NP
-  [Det [any, terminal]]
-  [AdjP [Adj [ugly, terminal]]]
-  [AdjP [Adj [smelly, terminal]]]
-  [N [sock, terminal]]
+  [Det any]
+  [AdjP [Adj ugly]]
+  [AdjP [Adj smelly]]
+  [N sock]
 ]
-\end{forest}
-\end{minipage}
+\end{gpstree}
 
 \newpage
 \noindent
-\begin{minipage}[t]{0.48\textwidth}
-\vspace{0pt}
-\textbf{GPS 2-(a)}\par
-\centering
-\begin{forest}
+\begin{gpstree}{GPS 2-(a)}
 [NP 
-  [Det [the, terminal]]
-  [N [desk, terminal]]
+  [Det the]
+  [N desk]
   [PP 
-    [P [with, terminal]]
+    [P with]
     [NP 
-      [Det [the, terminal]]
-      [AdjP [Adj [wobbly, terminal]]]
-      [N [drawner, terminal]]  
+      [Det the]
+      [AdjP [Adj wobbly]]
+      [N drawner]  
     ]
   ]
 ]
-\end{forest}
-\end{minipage}
+\end{gpstree}%
 \hfill
-\begin{minipage}[t]{0.48\textwidth}
-\vspace{0pt}
-\textbf{GPS 2-(b)}\par
-\centering
-\begin{forest}
+\begin{gpstree}{GPS 2-(b)}
 [PP
-  [P [in, terminal]]
+  [P in]
   [NP 
-    [Det [my, terminal]]
-    [AdjP [Adj [black, terminal]]]
-    [AdjP [Adj [rubber, terminal]]]
-    [N [boots, terminal]]
+    [Det my]
+    [AdjP [Adj black]]
+    [AdjP [Adj rubber]]
+    [N boots]
   ]
 ]
-\end{forest}
-\end{minipage}
+\end{gpstree}
 
 \bigskip
 \noindent
-\begin{minipage}[t]{\textwidth}
-\vspace{0pt}
-\textbf{GPS 2-(c)}\par
-\medskip
-\centering
-\begin{forest}
+\begin{gpstree}[\textwidth]{GPS 2-(c)}
 [NP 
-  [Det [that, terminal]]
-  [N [notebook, terminal]]
+  [Det that]
+  [N notebook]
   [PP 
-    [P [with, terminal]]
+    [P with]
     [NP
-      [Det [the, terminal]]
-      [N [scribbles, terminal]]
+      [Det the]
+      [N scribbles]
       [PP 
-        [P [in, terminal]]
+        [P in]
         [NP
-          [Det [the, terminal]]
-          [N [margin, terminal]]
+          [Det the]
+          [N margin]
         ]
       ]
     ]
   ]
 ]
-\end{forest}
-\end{minipage}
+\end{gpstree}
 
 \bigskip
 \noindent
-\begin{minipage}[t]{\textwidth}
-\vspace{0pt}
-\textbf{GPS 2-(d)}\par
-\medskip
-\centering
-\begin{adjustbox}{max width = \linewidth}
-\begin{forest}
+\begin{gpstree}[\textwidth]{GPS 2-(d)}
 [NP 
-  [Det [the, terminal]]
-  [N [pen, terminal]]
+  [Det the]
+  [N pen]
   [PP
-    [P [at, terminal]]
+    [P at]
     [NP 
-      [Det [the, terminal]]
-      [N [back, terminal]]
+      [Det the]
+      [N back]
       [PP
-        [P [of, terminal]]
+        [P of]
         [NP
-          [Det [the, terminal]]
-          [N [drawer, terminal]]
+          [Det the]
+          [N drawer]
           [PP
-            [P [in, terminal]]
+            [P in]
             [NP
-              [Det [the, terminal]]
-              [N [desk, terminal]]
+              [Det the]
+              [N desk]
               [PP
-                [P [near, terminal]]
+                [P near]
                 [NP
-                  [Det [the, terminal]]
-                  [AdjP [Adj [bright, terminal]]]
-                  [AdjP [Adj [yellow, terminal]]]
-                  [N [painting, terminal]]
+                  [Det the]
+                  [AdjP [Adj bright]]
+                  [AdjP [Adj yellow]]
+                  [N painting]
                 ]
               ]
             ]
@@ -272,211 +231,261 @@
     ]
   ]
 ]
-\end{forest}
-\end{adjustbox}
-\end{minipage}
+\end{gpstree}
 
 \newpage
 \noindent
-\begin{minipage}[t]{0.48\textwidth}
-\vspace{0pt}
-\textbf{GPS 4-(a)}\par
-\centering
-\begin{forest}
+\begin{gpstree}{GPS 4-(a)}
 [VP
-  [V [snores, terminal]]
+  [V snores]
 ]
-\end{forest}
-\end{minipage}
+\end{gpstree}%
 \hfill
-\bigskip
-\noindent
-\begin{minipage}[t]{0.48\textwidth}
-\vspace{0pt}
-\textbf{GPS 4-(b)}\par
-\centering
-\begin{forest}
+\begin{gpstree}{GPS 4-(b)}
 [VP
-  [V [eats, terminal]]
+  [V eats]
   [NP 
-    [N [burgers, terminal]]
+    [N burgers]
   ]
 ]
-\end{forest}
-\end{minipage} 
+\end{gpstree} 
 
 \bigskip
 \noindent
-\begin{minipage}[t]{0.48\textwidth}
-\vspace{0pt}
-\textbf{GPS 4-(c)}\par
-\centering
-\begin{forest}
+\begin{gpstree}{GPS 4-(c)}
 [VP
-  [AdvP [Adv [always, terminal]]]
-  [V [smokes, terminal]]
+  [AdvP [Adv always]]
+  [V smokes]
   [PP
-    [P [in, terminal]]
+    [P in]
     [NP
-      [Det [the, terminal]]
-      [N [car, terminal]]
+      [Det the]
+      [N car]
     ]
   ]
 ]
-\end{forest}
-\end{minipage}
+\end{gpstree}%
 \hfill
-\bigskip
-\noindent
-\begin{minipage}[t]{0.48\textwidth}
-\vspace{0pt}
-\textbf{GPS 4-(d)}\par
-\centering
-\begin{forest}
+\begin{gpstree}{GPS 4-(d)}
 [VP
-  [V [drinks, terminal]]
-  [AdvP [Adv [frequently, terminal]]]
+  [V drinks]
+  [AdvP [Adv frequently]]
   [PP
-    [P [in, terminal]]
+    [P in]
     [NP
-      [Det [the, terminal]]
-      [N [car, terminal]]
+      [Det the]
+      [N car]
     ]
   ]
 ]
-\end{forest}
-\end{minipage}
+\end{gpstree}
 
 \bigskip
 \noindent
-\begin{minipage}[t]{0.48\textwidth}
-\vspace{0pt}
-\textbf{GPS 4-(e)}\par
-\centering
-\begin{forest}
+\begin{gpstree}{GPS 4-(e)}
 [VP
-  [V [smokes, terminal]]
+  [V smokes]
   [PP
-    [P [in, terminal]]
+    [P in]
     [NP
-      [Det [the, terminal]]
-      [N [car, terminal]]
+      [Det the]
+      [N car]
     ]
   ]
-  [AdvP [Adv [frequently, terminal]]]
+  [AdvP [Adv frequently]]
 ]
-\end{forest}
-\end{minipage}
+\end{gpstree}%
 \hfill
-\bigskip
-\noindent
-\begin{minipage}[t]{0.48\textwidth}
-\vspace{0pt}
-\textbf{GPS 4-(f)}\par
-\centering
-\begin{forest}
+\begin{gpstree}{GPS 4-(f)}
 [VP
-  [V [smokes, terminal]]
-  [NP [N [cigars, terminal]]]
+  [V smokes]
+  [NP [N cigars]]
   [PP
-    [P [in, terminal]]
+    [P in]
     [NP
-      [Det [the, terminal]]
-      [N [car, terminal]]
+      [Det the]
+      [N car]
     ]
   ]
 ]
-\end{forest}
-\end{minipage}
+\end{gpstree}
 
 \bigskip
 \noindent
-\begin{minipage}[t]{0.48\textwidth}
-\vspace{0pt}
-\textbf{GPS 4-(g)}\par
-\centering
-\begin{forest}
+\begin{gpstree}{GPS 4-(g)}
 [VP
-  [V [sent, terminal]]
-  [NP [N [Gregory, terminal]]]
+  [V sent]
+  [NP [N Gregory]]
   [NP 
-    [Det [a, terminal]]
-    [AdjP [Adj [dirty, terminal]]]
-    [N [letter, terminal]]
+    [Det a]
+    [AdjP [Adj dirty]]
+    [N letter]
   ]
   [PP
-    [P [on, terminal]]
-    [NP [N [Friday, terminal]]]
+    [P on]
+    [NP [N Friday]]
   ]
 ]
-\end{forest}
-\end{minipage}
+\end{gpstree}
 
 \newpage
 \noindent
-\begin{minipage}[t]{0.48\textwidth}
-\vspace{0pt}
-\textbf{GPS 5-(a)}\par
-\centering
-\begin{forest}
+\begin{gpstree}{GPS 5-(a)}
 [NP
-  [N [buttons, terminal]]
-  [Conj [and, terminal]]
-  [N [bows, terminal]]
+  [N buttons]
+  [Conj and]
+  [N bows]
 ]
-\end{forest}
-\end{minipage}
+\end{gpstree}%
 \hfill
-\noindent
-\begin{minipage}[t]{0.48\textwidth}
-\vspace{0pt}
-\textbf{GPS 5-(b)}\par
-\centering
-\begin{forest}
+\begin{gpstree}{GPS 5-(b)}
 [PP 
-  [P [to, terminal]]
-  [Conj [and, terminal]]
-  [P [from, terminal]]
+  [P to]
+  [Conj and]
+  [P from]
   [NP 
-    [Det [the, terminal]]
-    [N [house, terminal]]
+    [Det the]
+    [N house]
   ]
 ]
-\end{forest}
-\end{minipage}
+\end{gpstree}
 
 \bigskip
 \noindent
-\begin{minipage}[t]{0.48\textwidth}
-\vspace{0pt}
-\textbf{GPS 5-(c)-(i)}\par
-\centering
-\begin{forest}
+\begin{gpstree}{GPS 5-(c)-(i)}
 [AdjP
-  [AdvP [Adv [very, terminal]]]
-  [Adj [big, terminal]]
-  [Conj [and, terminal]]
-  [Adj [ugly, terminal]]
+  [AdvP [Adv very]]
+  [AdjP [Adj big]
+        [Conj and]
+        [Adj ugly]
+  ]
 ]
-\end{forest}
-\end{minipage}
+\end{gpstree}%
 \hfill
-\noindent
-\begin{minipage}[t]{0.48\textwidth}
-\vspace{0pt}
-\textbf{GPS 5-(c)-(ii)}\par
-\centering
-\begin{forest}
+\begin{gpstree}{GPS 5-(c)-(ii)}
 [AdjP
   [AdjP 
-    [AdvP [Adv [very, terminal]]]
-    [Adj [big, terminal]]
+    [AdvP [Adv very]]
+    [Adj big]
   ]
-  [Conj [and, terminal]]
-  [Adj [ugly, terminal]]
+  [Conj and]
+  [Adj ugly]
 ]
-\end{forest}
-\end{minipage}
+\end{gpstree}
+
+\bigskip
+\noindent
+\begin{gpstree}{GPS 5-(d)}
+[VP 
+  [VP [V kiss]
+      [Conj and]
+      [V hug]
+  ]
+  [NP [AdjP [Adj your]]
+      [N dad]
+  ]
+]
+\end{gpstree}%
+\hfill
+\begin{gpstree}{GPS 5-(e)}
+[VP
+  [VP [V kiss]
+      [NP [AdjP [Adj your]]
+          [N dad]  
+      ]
+  ]
+  [Conj and]
+  [VP [V hug]
+      [NP [AdjP [Adj your]]
+          [N mom]
+      ] 
+  ]  
+]
+\end{gpstree}
+
+\bigskip
+\noindent
+\begin{gpstree}{GPS 5-(f)}
+[TP
+  [TP [NP [N He]]
+      [VP [V likes]
+          [N cookies]
+      ]
+  ]
+  [Conj and]
+  [TP [NP [N He]]
+      [VP [V hates]
+          [N crumbcake]
+      ]
+  ]
+]
+\end{gpstree}
+
+\newpage
+\noindent
+\begin{gpstree}{GPS 6-(a)}
+[TP 
+  [NP
+    [Det The]
+    [N kangaroo]
+  ]
+  [VP 
+    [V hopped] 
+    [PP 
+      [P over]
+      [NP [Det the]
+          [N truck]
+      ]    
+    ]
+  ]
+]
+\end{gpstree}%
+\hfill
+\begin{gpstree}{GPS 6-(b)}
+[TP
+  [NP [N I]]
+  [T haven't]
+  [VP [V seen]
+      [NP [Det this]
+          [N sentence]  
+      ]
+      [P before]
+  ]
+]
+\end{gpstree}
+
+\bigskip
+\noindent
+\begin{gpstree}{GPS 6-(c)}
+[TP
+  [NP [N susan]]
+  [T will]
+  [VP [AdvP [Adv never]]
+      [V sing]
+      [PP 
+        [P at]
+        [NP [N weddings]]
+      ]
+  ]
+]
+\end{gpstree}
+\hfill
+\begin{gpstree}{GPS 6-(d)}
+[TP
+  [NP [Det The] [N officer]]
+  [VP [AdvP [Adv carefully]] [V inspected] [NP [Det the] [N license]]]
+]
+\end{gpstree}
+
+\bigskip
+\noindent
+\begin{gpstree}[\textwidth]{GPS 6-(e)}
+[TP
+  [NP [AdjP [Adj Every]] [N cat]]
+  [VP [AdvP [Adv always]] [V knows] [NP [Det the] [N location] [PP [P of] [NP [AdjP [Adj her] [Adj favorite] [Adj catnip]] [N toy]]]]]
+] 
+\end{gpstree}
+
 
 
 \newpage
