@@ -42,9 +42,11 @@
   \textbf{#2}\par
   \medskip
   \centering
-  \begin{forest} simple terminals
-    #3
-  \end{forest}
+  \makebox[\linewidth][c]{%
+    \begin{forest} simple terminals
+      #3
+    \end{forest}%
+  }
   \end{minipage}%
 }
 {}
@@ -62,40 +64,26 @@
 
 \noindent
 \begin{gpstree}{GPS 1-(a)}
-[AdjP
-  [AdvP [Adv very]]
-  [Adj smelly]
-]
+[AdjP [AdvP [Adv very]] [Adj smelly]]
 \end{gpstree}%
 \hfill
 \begin{gpstree}{GPS 1-(b)}
-[AdvP
-  [AdvP [Adv too]]
-  [Adv quickly]
-]
+[AdvP [AdvP [Adv too]] [Adv quickly]]
 \end{gpstree}
 
 \bigskip
 \noindent
 \begin{gpstree}{GPS 1-(c)}
-[AdvP
-  [AdvP 
-    [AdvP [Adv much]]
-    [Adv too]
-    ]
-  [Adv quickly]
+[AdvP [AdvP [AdvP [Adv much]] [Adv too]]
+      [Adv quickly]
 ]
 \end{gpstree}%
 \hfill
 \begin{gpstree}{GPS 1-(d)}
-[AdvP
-  [AdvP
-    [AdvP 
-      [AdvP [Adv very]]
-      [Adv much]
-    ]
-    [Adv too]]     
-  [Adv quickly]
+[AdvP [AdvP [AdvP [AdvP [Adv very]]
+                  [Adv much]]
+            [Adv too]]     
+      [Adv quickly]
 ]
 \end{gpstree}
 
@@ -332,17 +320,13 @@
 \noindent
 \begin{gpstree}{GPS 5-(a)}
 [NP
-  [N buttons]
-  [Conj and]
-  [N bows]
+  [N [N buttons] [Conj and] [N bows]]
 ]
 \end{gpstree}%
 \hfill
 \begin{gpstree}{GPS 5-(b)}
 [PP 
-  [P to]
-  [Conj and]
-  [P from]
+  [P [P to] [Conj and] [P from]]
   [NP 
     [Det the]
     [N house]
@@ -355,12 +339,9 @@
 \begin{gpstree}{GPS 5-(c)-(i)}
 [AdjP
   [AdvP [Adv very]]
-  [AdjP [Adj big]
-        [Conj and]
-        [Adj ugly]
-  ]
+  [Adj [Adj big] [Conj and] [Adj ugly]]
 ]
-\end{gpstree}%
+\end{gpstree}
 \hfill
 \begin{gpstree}{GPS 5-(c)-(ii)}
 [AdjP
@@ -369,7 +350,7 @@
     [Adj big]
   ]
   [Conj and]
-  [Adj ugly]
+  [AdjP [Adj ugly]]
 ]
 \end{gpstree}
 
@@ -377,11 +358,8 @@
 \noindent
 \begin{gpstree}{GPS 5-(d)}
 [VP 
-  [VP [V kiss]
-      [Conj and]
-      [V hug]
-  ]
-  [NP [AdjP [Adj your]]
+  [V [V kiss] [Conj and] [V hug]]
+  [NP [Det your]
       [N dad]
   ]
 ]
@@ -390,13 +368,13 @@
 \begin{gpstree}{GPS 5-(e)}
 [VP
   [VP [V kiss]
-      [NP [AdjP [Adj your]]
+      [NP [Det your]
           [N dad]  
       ]
   ]
   [Conj and]
   [VP [V hug]
-      [NP [AdjP [Adj your]]
+      [NP [Det your]
           [N mom]
       ] 
   ]  
@@ -409,13 +387,13 @@
 [TP
   [TP [NP [N He]]
       [VP [V likes]
-          [N cookies]
+          [NP [N cookies]]
       ]
   ]
   [Conj and]
   [TP [NP [N He]]
       [VP [V hates]
-          [N crumbcake]
+          [NP [N crumbcake]]
       ]
   ]
 ]
@@ -449,7 +427,7 @@
       [NP [Det this]
           [N sentence]  
       ]
-      [P before]
+      [PP [P before]]
   ]
 ]
 \end{gpstree}
@@ -458,15 +436,9 @@
 \noindent
 \begin{gpstree}{GPS 6-(c)}
 [TP
-  [NP [N susan]]
+  [NP [N Susan]]
   [T will]
-  [VP [AdvP [Adv never]]
-      [V sing]
-      [PP 
-        [P at]
-        [NP [N weddings]]
-      ]
-  ]
+  [VP [AdvP [Adv never]] [V sing] [PP [P at] [NP [N weddings]]]]
 ]
 \end{gpstree}
 \hfill
@@ -481,12 +453,147 @@
 \noindent
 \begin{gpstree}[\textwidth]{GPS 6-(e)}
 [TP
-  [NP [AdjP [Adj Every]] [N cat]]
-  [VP [AdvP [Adv always]] [V knows] [NP [Det the] [N location] [PP [P of] [NP [AdjP [Adj her] [Adj favorite] [Adj catnip]] [N toy]]]]]
+  [NP [Det Every] [N cat]]
+  [VP [AdvP [Adv always]] [V knows] [NP [Det the] [N location] [PP [P of] [NP [Det her] [AdjP [Adj favorite]] [AdjP [Adj catnip]] [N toy]]]]]
 ] 
 \end{gpstree}
 
+\newpage
+\noindent
+\begin{gpstree}[\textwidth]{GPS 6-(f)}
+[TP
+  [NP [Det The] [N cat]]
+  [VP [V put] [NP [Det her] [AdjP [Adj catnip]] [N toy]] [PP [P on] [NP [Det the] [AdjP [Adj plastic]] [N mat]]]]
+] 
+\end{gpstree}
 
+\bigskip
+\noindent
+\begin{gpstree}[\textwidth]{GPS 6-(g)}
+[TP
+  [NP [Det The] [AdjP [AdvP [Adv very]] [Adj young]] [N child]]
+  [VP [V walked] [PP [P from] [NP [N school]]] [PP [P to] [NP [Det the] [N store]]]]
+] 
+\end{gpstree}
+
+\bigskip
+\noindent
+\begin{gpstree}[\textwidth]{GPS 6-(h)}
+[TP
+  [NP [N Nicky]]
+  [VP [V paid] [NP [Det a] [N dollar]] [PP [P for] [NP [Det a] [N head] [PP [P of] [NP [N lettuce]]]]]]
+] 
+\end{gpstree}
+
+\newpage
+\noindent
+\begin{gpstree}{GPS 6-(i)}
+[TP
+  [NP [N Teenagers]]
+  [VP [V drive] [AdvP [AdvP [Adv rather]] [Adv quickly]]]
+] 
+\end{gpstree} \par
+\bigskip
+\noindent
+\begin{gpstree}[\textwidth]{GPS 6-(j)}
+[TP
+  [NP [Det A] [AdjP [Adj clever]] [N magician] [PP [P with] [NP [Det the] [AdjP [Adj right]] [N equipment]]]]
+  [T can]
+  [VP [V fool] [NP [Det the] [N audience]] [AdvP [Adv easily]]]
+] 
+\end{gpstree} \par
+\bigskip
+\noindent
+\begin{gpstree}[\textwidth]{GPS 6-(k)}
+[TP
+  [NP [Det The] [N police]]
+  [T might]
+  [VP [V plant] [NP [Det the] [N drugs]] [PP [P in] [NP [Det the] [N apartment]]]]
+] 
+\end{gpstree}
+
+\newpage
+\noindent
+\begin{gpstree}[\textwidth]{GPS 6-(l)}
+[TP
+  [NP [Det Those] [AdjP [Adj Olympic]] [N hopefuls]]
+  [T should]
+  [VP [V practice] [AdvP [Adv diligently]] [AdvP [Adv daily]]]
+] 
+\end{gpstree}
+
+\bigskip
+\noindent
+\begin{gpstree}[\textwidth]{GPS 6-(m)}
+[TP
+  [NP [Det The] [AdjP [Adj latest]] [N research] [PP [P on] [NP [N dieting]]]]
+  [VP [AdvP [Adv always]] [V warns] [NP [N people]] [PP [P about] [NP [Det the] [N dangers] [PP [P of] [NP [AdjP [AdvP [Adv too]] [Adj much]] [N cholesterol]]]]]]
+] 
+\end{gpstree}
+
+\bigskip
+\noindent
+\begin{gpstree}[\textwidth]{GPS 6-(n)}
+[TP
+  [NP [Det That] [AdjP [Adj annoying]] [N faucet]]
+  [T was]
+  [VP [V dripping] [AdvP [Adv constantly]] [PP [P for] [NP [N months]]]]
+] 
+\end{gpstree}
+
+\newpage
+\noindent
+\begin{gpstree}[\textwidth]{GPS 6-(o)}
+[TP
+  [NP [N Marian]]
+  [VP [V wonders] [CP [C if] 
+  [TP 
+    [NP [Det the] [N package] [PP [P from] [NP [N Boston]]]]
+    [T will]
+    [VP [AdvP [Adv ever]] [V arrive]]
+  ]]]
+] 
+\end{gpstree}
+
+\bigskip
+\noindent
+\begin{gpstree}[\textwidth]{GPS 6-(p)}
+[TP
+  [NP [N I]]
+  [VP [V said] [CP [C that] 
+  [TP
+    [NP [N Bonny]]
+    [T should]
+    [VP [V do] [NP [Det some] [N dances] [PP [P from] [NP [Det the] [N {Middle East}]]]]]
+  ]]]
+] 
+\end{gpstree}
+
+\newpage
+\noindent
+\begin{gpstree}[\textwidth]{GPS 6-(q)}
+[TP
+  [CP [C That] 
+  [TP
+    [NP [N Dan]]
+    [VP [V smokes] [PP [P in] [NP [Det the] [N office]]]]
+  ]]
+  [VP [AdvP [Adv really]] [V bothers] [NP [N Alina]]]
+] 
+\end{gpstree}
+
+\bigskip
+\noindent
+\begin{gpstree}[\textwidth]{GPS 6-(r)}
+[TP
+  [NP [Det The] [N belief] [CP [C that] 
+  [TP 
+    [NP [AdjP [Adj syntactic]] [N theory]]
+    [VP [V reveals] [NP [Det the] [AdjP [Adj inner]] [N structure] [PP [P of] [NP [N sentences]]]]] 
+  ]]]
+  [VP [V emboldened] [NP [Det the] [AdjP [AdvP [AdvP [AdvP [Adv already]] [Adv much]] [Adv too]] [Adj cocky]] [N professor]]]
+] 
+\end{gpstree}
 
 \newpage
 \section{chpt 4. Structural Relations}
